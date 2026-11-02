@@ -1,0 +1,27 @@
+{
+  "name": "hiring-intelligence",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "backend/*",
+    "frontend"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev -w @hi/api",
+    "dev:web": "npm run dev -w @hi/web",
+    "db:migrate": "npm run migrate -w @hi/db",
+    "db:seed": "npm run seed -w @hi/db",
+    "db:reset": "npm run reset -w @hi/db",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "build": "npm run build -w @hi/web",
+    "preview:web": "npm run preview -w @hi/web -- --port 4173",
+    "demo": "npm run build && npm run preview:web",
+    "smoke": "tsx scripts/smoke.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
